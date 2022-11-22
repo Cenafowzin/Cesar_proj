@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import RequestColumn from './RequestColumn';
-import { Navigate } from 'react-router-dom';
 
 const Container = styled.div`
     display: flex;

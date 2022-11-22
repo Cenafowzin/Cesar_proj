@@ -69,13 +69,16 @@ function Login(props) {
         <form onSubmit={handleSubmit}>
             <Container>
                 <p>
-                    <Input type="text" placeholder='Usuário' onChange={(e => setUsername(e.target.value))} />
+                    <Input type="text" placeholder=' Usuário' onChange={(e => setUsername(e.target.value))} />
                 </p>
                 <p>
-                    <Input type="password" placeholder='Senha' onChange={(e => setPassword(e.target.value))} />
+                    <Input type="password" placeholder=' Senha' onChange={(e => setPassword(e.target.value))} />
                 </p>
                 <p>
                     <Button>Login</Button>
+                </p>
+                <p>
+                    Não tem um conta? <Link to="/register">Registre aqui</Link>
                 </p>
             </Container>
         </form>

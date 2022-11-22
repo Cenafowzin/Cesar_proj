@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -77,6 +77,9 @@ function EmpLogin(props) {
                 </p>
                 <p>
                     <Button>Login</Button>
+                </p>
+                <p>
+                Não tem um conta? <Link to="/empregister">Registre aqui</Link>
                 </p>
             </Container>
         </form>

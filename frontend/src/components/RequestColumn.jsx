@@ -56,7 +56,6 @@ function RequestColumn({ column, tasks, board }) {
     newColumnOrder.push(newColumnId);
 
     const activeTasks = request.tasks.filter((task) => task.active);
-    console.log(request.tasks)
 
     async function saveBoard(newBoard) {
         const response = await fetch('http://127.0.0.1:8000/requestsheet', {
@@ -96,13 +95,11 @@ function RequestColumn({ column, tasks, board }) {
       ...prev,
       description,
     }));
-    console.log(newBoard)
     const payLoadBoard = {
         columnOrder: [newColumnId],
         columns: {[newColumnId]: newColumn},
         tasks: newTasks
     }
-    console.log(payLoadBoard)
     saveBoard(payLoadBoard)
   };
 

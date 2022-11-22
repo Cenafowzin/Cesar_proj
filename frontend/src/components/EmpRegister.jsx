@@ -1,5 +1,36 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import styled from 'styled-components';
+
+const Container = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`
+
+const Input = styled.input`
+    border: 0px;
+    text-align: center;
+    width: 134px;
+    height: 29px;
+    left: 59px;
+    top: 225px;
+    background: #D9D9D9;
+    box-shadow: 0px 4px 4px rgba(108, 108, 108, 0.9);
+    border-radius: 40px;
+`
+
+const Button = styled.button`
+    border: 0px;
+    color: white;
+    width: 134px;
+    height: 29px;
+    left: 59px;
+    top: 323px;
+    background: #862CBD;
+    box-shadow: 0px 4px 4px rgba(71, 31, 122, 0.7);
+    border-radius: 40px;
+`
 
 function EmpRegister(props) {
     const [username ,setUsername] = useState('');
@@ -37,18 +68,20 @@ function EmpRegister(props) {
 
     return(
         <form onSubmit={handleSubmit}>
-            <p>
-                Username <input type="text" onChange={(e => setUsername(e.target.value))} />
-            </p>
-            <p>
-                Password <input type="password" onChange={(e => setPassword(e.target.value))} />
-            </p>
-            <p>
-                <button>Register</button>
-            </p>
-            <p>
-                Já tem um conta? <Link to="/emplogin">Logue aqui</Link>
-            </p>
+            <Container>
+                <p>
+                    <Input type="text" placeholder=' Usuário' onChange={(e => setUsername(e.target.value))} />
+                </p>
+                <p>
+                    <Input type="password" placeholder=' Senha' onChange={(e => setPassword(e.target.value))} />
+                </p>
+                <p>
+                    <Button>Register</Button>
+                </p>
+                <p>
+                    Já tem um conta? <Link to="/emplogin">Logue aqui</Link>
+                </p>
+            </Container>
         </form>
     )
 }

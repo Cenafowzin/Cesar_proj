@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-//import { DragDopContext, Droppable } from 'react-beatiful-dnd';
 import styled from 'styled-components';
 import EmpColumn from './EmpColumn';
 import { Navigate } from 'react-router-dom';
@@ -25,9 +24,25 @@ function Requests(props) {
         return data.board;
     }
 
+    async function saveBoard() {
+        const response = await fetch('http://127.0.0.1:8000/requestsheet', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                "Authorization": "Bearer " + props.token
+            },
+            body: JSON.stringify(board),
+        });
+        const data = await response.json();
+    }
+
     useEffect(() => {
         fetchBoard().then(data => setBoard(data));
     }, []);
+
+    useEffect(() => {
+        saveBoard();
+    }, [board]);
 
     if (!props.token) {
         return <Navigate to="/emplogin" replace />

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-//import { DragDopContext, Droppable } from 'react-beatiful-dnd';
 import styled from 'styled-components';
 import Column from './Column';
 import AddColumn from './AddColumn';
