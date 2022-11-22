@@ -28,7 +28,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/request" element={<RequestSheet />} /> {/*user makes request*/}
-        <Route path="/timer" element={<Timer />} />
+        <Route path="/timer" element={<Timer />} /> 
         <Route path="/requests" element={<Requests token={token}/>} /> {/*emplyee can see requests*/}
         <Route path="/emplogin" element={<EmpLogin setToken={setToken}/>} /> {/*emplyee login*/}
         <Route path="/empregister" element={<EmpRegister setToken={setToken}/>} /> {/*emplyee register*/}
